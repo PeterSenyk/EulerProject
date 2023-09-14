@@ -1,7 +1,7 @@
-base_new = int(input("Give me a number between 2 & 9: "))
-print(base_new)
-decimal_max = base_new ** 4 - 1
-print(decimal_max)
-decimal_user = int(input("Please select a nmumber less than or equal to " + str(decimal_max)))
-print(decimal_user)
+number_fib = 0
+number_one = 1
+number_2 = 2
+sum = 0
 
+while number_fib <= 4000000:
+    if
