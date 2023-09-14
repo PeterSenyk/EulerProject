@@ -1,8 +1,18 @@
-fib_number = 0
 number_one = 1
-number_2 = 2
+number_two = 2
+fib_number = 0
 sum = 0
 
-while number_fib <= 4000000:
-    if number_fib % 2 == 0
+while fib_number <= 4000000:
+    if fib_number % 2 == 0:
         sum += fib_number
+
+    fib_number = number_one
+    print("fib", fib_number)
+    number_two += number_one
+    print("two", number_two)
+    number_one += fib_number
+    print("one", number_one)
+
+
+print(sum)
