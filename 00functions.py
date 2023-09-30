@@ -31,4 +31,6 @@ def is_factor(number):
 
 
 print(is_factor(600851475143))
-:::
+"""
+
+
