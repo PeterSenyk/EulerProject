@@ -1,21 +1,36 @@
 import math
-
-# initial_number = 600861475143
-initial_number = 20
-factor = 1
-prime = 1
-factor_list = list()
-prime_list = [2]
+from typing import List, Any
 
 
-while factor <= initial_number:
-    if initial_number % factor == 0:
-        factor_list.append(factor)
-    factor += 1
+def is_factor(number):
+    factors = []
+    i = 1
+    while i * i <= number:
+        if number % i == 0:
+            factors.append(int(i))
+            if number / i != i:
+                factors.append(int(number / i))
+        i += 1
+    factors.sort()
+    return factors
 
-print(factor_list)
-factor_list.reverse()
-print(factor_list)
-position_zero = 0
-possible_factor = 2
+
+def is_number_prime(number):
+    for divisor in range(2, number):
+        if number % divisor == 0:
+            return False
+    return True
+
+
+initial_number = 600851475143
+prime_factor = []
+factor_list = is_factor(initial_number)
+
+
+
+for i in factor_list:
+    if is_number_prime(i):
+        prime_factor.append(i)
+
+print(max(prime_factor))
 
