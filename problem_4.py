@@ -1,13 +1,8 @@
-number_one = 998
-number_two = 999
-
-product = number_one * number_two
-print(f"The product =", product)
+"""Largest palindrome product of two 3-digit numbers"""
 
 
 def digit_list(entered_product):
-    divisor = 10 ** (len(str(entered_product)) - 1 )
-    print(f"The divisor =", divisor)
+    divisor = 10 ** (len(str(entered_product)) - 1)
     digits = []
     while divisor > 0:
         new_digit = entered_product // divisor
@@ -17,13 +12,35 @@ def digit_list(entered_product):
     return digits
 
 
-pal_list = digit_list(product)
+def list_split(entered_list):
+    half_list = len(entered_list) // 2
 
-list_left = pal_list[:len(pal_list)//2]
-print(list_left, f"= Left half of the list")
-list_right = pal_list[len(pal_list)//2:]
-list_right.reverse()
-print(list_right, f"= Right half of the list reversed")
+    return entered_list[:half_list], entered_list[half_list:]
 
-if list_left == list_right:
-    print("true")
+
+def palindrome_check(one, two):
+    if one == two:
+        return True
+    else:
+        return False
+
+
+number_one = 99
+number_two = 99
+
+for x in range(100, 1):
+    print(x)
+
+
+for x in range(1000, 1):
+    for y in range(1000, 99):
+        product_num = number_one * number_two
+        dig_list = digit_list(number_one * number_two)
+        left, right = list(list_split(dig_list))
+        right.reverse()
+        if palindrome_check(left, right):
+            print(number_one, number_two, (number_one * number_two))
+            break
+        else:
+            number_one -= 1
+number_two -= 1
